@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static ArrayList<Book> bookList = new ArrayList<Book>();
-    public ArrayList<Author> authorList = new ArrayList<Author>();
+    public static ArrayList<Author> authorList = new ArrayList<Author>();
     public ArrayList<User> userList = new ArrayList<User>();
     public ArrayList<Loan> loanList = new ArrayList<Loan>();
 
