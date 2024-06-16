@@ -8,8 +8,10 @@ public class Main {
     public ArrayList<Loan> loanList = new ArrayList<Loan>();
 
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
+        Author author = new Author("Jonathan", "Cortes", "Costarican", "22/11/2003");
+        authorList.add(author);
+//        Manga book = new Manga("Test", author, "22/22", "Language", "Manga", true, "Chinese");
+//        bookList.add(book);
         MyFrame mainWin = new MyFrame("Library", 655, 420, "main");
 
         // Make the frame visible
