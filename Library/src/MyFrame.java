@@ -119,7 +119,7 @@ public class MyFrame extends JFrame {
                                     JOptionPane.ERROR_MESSAGE);
                             setVisible(true);
                         } else{
-                            MyFrame fShowBook = new MyFrame("Books Registered", 450, 420, "showBook");
+                            MyFrame fShowBook = new MyFrame("Books Registered", 450, 520, "showBook");
                         }
                         break;
                     case "winNewAuthor":
@@ -249,30 +249,50 @@ public class MyFrame extends JFrame {
                 String genre = (String) cmbGenre.getSelectedItem();
                 boolean availability = cmbAvailability.getSelectedItem() != "No";
 
-                for (Author author : Main.authorList) {
-                    String formatedAuthor = author.getLastName() + ", " + author.getName();
-                    if (formatedAuthor == cmbAuthor.getSelectedItem()){
-                        switch (genre){
-                            case "Comic":
-                                Comic comic = new Comic(txtTitle.getText(), author, date, lblSpecifics.getText(), genre, availability, txtSpecifics.getText());
-                                Main.bookList.add(comic);
-                                break;
-                            case "Literature":
-                                Literature literature = new Literature(txtTitle.getText(), author, date, lblSpecifics.getText(), genre, availability, txtSpecifics.getText());
-                                Main.bookList.add(literature);
-                                break;
-                            case "Magazine":
-                                Magazine magazine = new Magazine(txtTitle.getText(), author, date, lblSpecifics.getText(), genre, availability, txtSpecifics.getText());
-                                Main.bookList.add(magazine);
-                                break;
-                            case "Manga":
-                                Manga manga = new Manga(txtTitle.getText(), author, date, lblSpecifics.getText(), genre, availability, txtSpecifics.getText());
-                                Main.bookList.add(manga);
-                                break;
-                            case "Science":
-                                Science science = new Science(txtTitle.getText(), author, date, lblSpecifics.getText(), genre, availability, txtSpecifics.getText());
-                                Main.bookList.add(science);
-                                break;
+                if (txtTitle.getText().isEmpty() || txtSpecifics.getText().isEmpty()) {
+                    JOptionPane.showMessageDialog(null,
+                            "Every field is required",
+                            "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                } else{
+                    for (Author author : Main.authorList) {
+                        String formattedAuthor = author.getLastName() + ", " + author.getName();
+                        if (formattedAuthor.equals((String) cmbAuthor.getSelectedItem())){
+                            switch (genre){
+                                case "Comic":
+                                    Comic comic = new Comic(txtTitle.getText(), author, date, lblSpecifics.getText(), genre, availability, txtSpecifics.getText());
+                                    Main.bookList.add(comic);
+                                    break;
+                                case "Literature":
+                                    Literature literature = new Literature(txtTitle.getText(), author, date, lblSpecifics.getText(), genre, availability, txtSpecifics.getText());
+                                    Main.bookList.add(literature);
+                                    break;
+                                case "Magazine":
+                                    Magazine magazine = new Magazine(txtTitle.getText(), author, date, lblSpecifics.getText(), genre, availability, txtSpecifics.getText());
+                                    Main.bookList.add(magazine);
+                                    break;
+                                case "Manga":
+                                    Manga manga = new Manga(txtTitle.getText(), author, date, lblSpecifics.getText(), genre, availability, txtSpecifics.getText());
+                                    Main.bookList.add(manga);
+                                    break;
+                                case "Science":
+                                    Science science = new Science(txtTitle.getText(), author, date, lblSpecifics.getText(), genre, availability, txtSpecifics.getText());
+                                    Main.bookList.add(science);
+                                    break;
+                            }
+                            JOptionPane.showMessageDialog(null,
+                                    "Book Has been Registered",
+                                    "Success",
+                                    JOptionPane.INFORMATION_MESSAGE);
+                            txtTitle.setText("");
+                            lblSpecifics.setText("");
+                            txtSpecifics.setText("");
+                            cmbGenre.setSelectedIndex(0);
+                            cmbAuthor.setSelectedIndex(0);
+                            cmbDays.setSelectedIndex(0);
+                            cmbMonths.setSelectedIndex(0);
+                            cmbYears.setSelectedIndex(0);
+                            cmbAvailability.setSelectedIndex(0);
                         }
                     }
                 }
@@ -435,7 +455,15 @@ public class MyFrame extends JFrame {
             }
         });
 
-
+        JButton btnBack = new JButton("Cancel");
+        btnBack.setBounds(150, 420, 80, 40);
+        btnBack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                MyFrame mainWin = new MyFrame("Library", 655, 420, "main");
+            }
+        });
 
         // Add the button to the JFrame
         add(lblTitle);
@@ -446,6 +474,7 @@ public class MyFrame extends JFrame {
         add(lblGenre);add(lblGenreDet);
         add(lblAvailable);add(lblAvailableDet);
         add(lblBook);add(cmbBook);
+        add(btnBack);
     }
 
     private void newAuthor() {
