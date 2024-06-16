@@ -245,8 +245,37 @@ public class MyFrame extends JFrame {
         btnNewBook.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dispose();
-                MyFrame mainWin = new MyFrame("Library", 655, 420, "main");
+                String date = cmbDays.getSelectedItem() + "/" + cmbMonths.getSelectedItem() + "/" + cmbYears.getSelectedItem();
+                String genre = (String) cmbGenre.getSelectedItem();
+                boolean availability = cmbAvailability.getSelectedItem() != "No";
+
+                for (Author author : Main.authorList) {
+                    String formatedAuthor = author.getLastName() + ", " + author.getName();
+                    if (formatedAuthor == cmbAuthor.getSelectedItem()){
+                        switch (genre){
+                            case "Comic":
+                                Comic comic = new Comic(txtTitle.getText(), author, date, lblSpecifics.getText(), genre, availability, txtSpecifics.getText());
+                                Main.bookList.add(comic);
+                                break;
+                            case "Literature":
+                                Literature literature = new Literature(txtTitle.getText(), author, date, lblSpecifics.getText(), genre, availability, txtSpecifics.getText());
+                                Main.bookList.add(literature);
+                                break;
+                            case "Magazine":
+                                Magazine magazine = new Magazine(txtTitle.getText(), author, date, lblSpecifics.getText(), genre, availability, txtSpecifics.getText());
+                                Main.bookList.add(magazine);
+                                break;
+                            case "Manga":
+                                Manga manga = new Manga(txtTitle.getText(), author, date, lblSpecifics.getText(), genre, availability, txtSpecifics.getText());
+                                Main.bookList.add(manga);
+                                break;
+                            case "Science":
+                                Science science = new Science(txtTitle.getText(), author, date, lblSpecifics.getText(), genre, availability, txtSpecifics.getText());
+                                Main.bookList.add(science);
+                                break;
+                        }
+                    }
+                }
             }
         });
 
