@@ -12,9 +12,8 @@ public class Main {
         authorList.add(author);
         Manga book = new Manga("Test", author, "22/22", "Language", "Manga", true, "Chinese");
         bookList.add(book);
+        User user = new User("Jonathan", "Cortes", "Heredia", "83941986", "118920382");
+        userList.add(user);
         MyFrame mainWin = new MyFrame("Library", 655, 420, "main");
-
-        // Make the frame visible
-
     }
 }

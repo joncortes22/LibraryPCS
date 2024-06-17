@@ -39,4 +39,8 @@ public abstract class Book {
     public String getGenre() {
         return genre;
     }
+
+    public void setAvailability(Boolean availability) {
+        this.availability = availability;
+    }
 }
