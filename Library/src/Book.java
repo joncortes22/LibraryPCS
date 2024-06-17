@@ -2,7 +2,6 @@ public abstract class Book {
     private String name;
     private Author author;
     private String publishDate;
-
     private String feature;
 
     private String genre;

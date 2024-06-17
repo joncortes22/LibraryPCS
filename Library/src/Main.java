@@ -4,8 +4,8 @@ public class Main {
 
     public static ArrayList<Book> bookList = new ArrayList<Book>();
     public static ArrayList<Author> authorList = new ArrayList<Author>();
-    public ArrayList<User> userList = new ArrayList<User>();
-    public ArrayList<Loan> loanList = new ArrayList<Loan>();
+    public static ArrayList<User> userList = new ArrayList<User>();
+    public static ArrayList<Loan> loanList = new ArrayList<Loan>();
 
     public static void main(String[] args) {
         Author author = new Author("Jonathan", "Cortes", "Costarican", "22/11/2003");

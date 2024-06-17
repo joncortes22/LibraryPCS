@@ -680,4 +680,100 @@ public class MyFrame extends JFrame {
     }
 
 
+    private void newUser() {
+        // Books
+        JLabel lblTitle = new JLabel("New User");
+        lblTitle.setBounds(150, 20, 200, 50);
+
+        // Name
+        JLabel lblName = new JLabel("ID:");
+        lblName.setBounds(60, 70, 200, 50);
+
+        JTextField txtName = new JTextField();
+        txtName.setBounds(150, 80, 200, 30);
+
+        //Author
+        JLabel lblLastName = new JLabel("First Name:");
+        lblLastName.setBounds(60, 120, 200, 50);
+
+        JTextField txtLastName = new JTextField();
+        txtLastName.setBounds(150, 130, 200, 30);
+
+        //PublishDate
+        JLabel lblDate = new JLabel("Last Name:");
+        lblDate.setBounds(60, 170, 200, 50);
+
+        JTextField txtAddress = new JTextField();
+        txtAddress.setBounds(150, 180, 200, 30);
+
+        //Specifics
+        JLabel lblPhone = new JLabel("Address:");
+        lblPhone.setBounds(60, 220, 200, 50);
+
+        JTextField txtPhone = new JTextField();
+        txtPhone.setBounds(150, 230, 200, 30);
+
+        //Specifics
+        JLabel lblId = new JLabel("Phone Number:");
+        lblId.setBounds(60, 270, 200, 50);
+
+        JTextField txtId = new JTextField();
+        txtId.setBounds(150, 280, 200, 30);
+
+        JButton btnCreateAuthor = new JButton("Create");
+        btnCreateAuthor.setBounds(50, 320, 80, 40);
+        addNewUserListeners(btnCreateAuthor, txtName, txtLastName, txtAddress, txtPhone, txtId);
+
+        JButton btnBack = new JButton("Cancel");
+        btnBack.setBounds(150, 320, 80, 40);
+        btnBack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                MyFrame mainWin = new MyFrame("Library", 655, 420, "main");
+            }
+        });
+    }
+
+    private void addNewUserListeners(JButton button,
+                                       JTextField jName,
+                                       JTextField jLastName,
+                                       JTextField jAddress,
+                                       JTextField jPhoneNumber,
+                                       JTextField jId) {
+
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String firstName = jName.getText().trim();
+                String lastName = jLastName.getText().trim();
+                String address = jAddress.getText().trim();
+                String phone = jPhoneNumber.getText().trim();
+                String id = jId.getText().trim();
+
+                if (firstName.isEmpty() || lastName.isEmpty() || address.isEmpty() || phone.isEmpty() || id.isEmpty()) {
+                    JOptionPane.showMessageDialog(null,
+                            "Every field is required",
+                            "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                } else {
+                    // Call the method when the button is pressed
+//                    String birth = day + "/" + month + "/" + year;
+//                    Author author = new Author(firstName, lastName, nationality, birth);
+//                    Main.authorList.add(author);
+//                    JOptionPane.showMessageDialog(null,
+//                            "Author Has been Registered",
+//                            "Success",
+//                            JOptionPane.INFORMATION_MESSAGE);
+//                    jName.setText("");
+//                    jLastName.setText("");
+//                    jNationality.setText("");
+//                    jDay.setSelectedIndex(0);
+//                    jMonth.setSelectedIndex(0);
+//                    jYear.setSelectedIndex(0);
+                }
+            }
+        });
+    }
+
 }
