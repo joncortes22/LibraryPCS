@@ -938,7 +938,13 @@ public class MyFrame extends JFrame {
         for (int n = 1; n <= 31; n++){days[n-1] = Integer.toString(n);}
         for (int n = 1; n <= 12; n++){months[n-1] = Integer.toString(n);}
 
-        String[] arrBooks = new String[Main.bookList.size()];
+        int availableCount = 0;
+        for (Book book : Main.bookList) {
+            if (book.getAvailability()){
+                availableCount++;
+            }
+        }
+        String[] arrBooks = new String[availableCount];
 
         // Books
         JLabel lblTitle = new JLabel("Loan a Book");
@@ -1047,6 +1053,10 @@ public class MyFrame extends JFrame {
                                 if (!furtherAction){
                                     dispose();
                                     MyFrame mainWin = new MyFrame("Library", 655, 420, "main");
+                                } else{
+                                    dispose();
+                                    MyFrame fNewLoan = new MyFrame("New Loan", 450, 400, "newLoan");
+                                    break;
                                 }
                             }
                         }
@@ -1163,6 +1173,10 @@ public class MyFrame extends JFrame {
                         if (Main.loanList.size() == 0){
                             dispose();
                             MyFrame mainWin = new MyFrame("Library", 655, 420, "main");
+                            break;
+                        } else{
+                            dispose();
+                            MyFrame fShowLoan = new MyFrame("Show Loan", 450, 420, "showLoan");
                             break;
                         }
                     }
