@@ -51,9 +51,12 @@ public class MyFrame extends JFrame {
 
     private void addMainComponents() {
 
+        JLabel lblLibrary = new JLabel("Library");
+        lblLibrary.setBounds(295, 30, 200, 50);
+
         // Books
         JLabel lblBook = new JLabel("Books");
-        lblBook.setBounds(80, 75, 200, 50);
+        lblBook.setBounds(90, 75, 200, 50);
 
         JButton btnNewBook = new JButton("New Book");
         btnNewBook.setBounds(50, 130, 120, 50);
@@ -65,7 +68,7 @@ public class MyFrame extends JFrame {
 
         // Authors
         JLabel lblAuthors = new JLabel("Authors");
-        lblAuthors.setBounds(220, 75, 200, 50);
+        lblAuthors.setBounds(225, 75, 200, 50);
 
         JButton btnNewAuthor = new JButton("New Author");
         btnNewAuthor.setBounds(190, 130, 120, 50);
@@ -77,7 +80,7 @@ public class MyFrame extends JFrame {
 
         // Authors
         JLabel lblUsers = new JLabel("Users");
-        lblUsers.setBounds(360, 75, 200, 50);
+        lblUsers.setBounds(370, 75, 200, 50);
 
         JButton btnNewUser = new JButton("New User");
         btnNewUser.setBounds(330, 130, 120, 50);
@@ -89,7 +92,7 @@ public class MyFrame extends JFrame {
 
         // Loans
         JLabel lblLoans = new JLabel("Loans");
-        lblLoans.setBounds(500, 75, 200, 50);
+        lblLoans.setBounds(510, 75, 200, 50);
 
         JButton btnNewLoan = new JButton("New Loan");
         btnNewLoan.setBounds(470, 130, 120, 50);
@@ -100,6 +103,7 @@ public class MyFrame extends JFrame {
         addMainListeners(btnShowLoans, "winShowLoan");
 
         // Add the button to the JFrame
+        add(lblLibrary);
         add(lblBook);add(btnNewBook);add(btnShowBooks);
         add(lblAuthors);add(btnNewAuthor);add(btnShowAuthors);
         add(lblUsers);add(btnNewUser);add(btnShowUser);
@@ -215,7 +219,7 @@ public class MyFrame extends JFrame {
 
         // Books
         JLabel lblTitle = new JLabel("New Book");
-        lblTitle.setBounds(150, 20, 200, 50);
+        lblTitle.setBounds(170, 20, 200, 50);
 
         //Title
         JLabel lblName = new JLabel("Title:");
@@ -369,7 +373,7 @@ public class MyFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                MyFrame mainWin = new MyFrame("Library", 655, 420, "main");
+                MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
             }
         });
 
@@ -496,7 +500,7 @@ public class MyFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
-                MyFrame mainWin = new MyFrame("Library", 655, 420, "main");
+                MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
             }
         });
 
@@ -562,16 +566,16 @@ public class MyFrame extends JFrame {
         txtNationality.setBounds(150, 230, 200, 30);
 
         JButton btnCreateAuthor = new JButton("Create");
-        btnCreateAuthor.setBounds(50, 280, 80, 40);
+        btnCreateAuthor.setBounds(150, 280, 80, 40);
         addNewAuthorListeners(btnCreateAuthor, txtName, txtLastName, txtNationality, cmbDays, cmbMonths, cmbYears);
 
         JButton btnBack = new JButton("Cancel");
-        btnBack.setBounds(150, 280, 80, 40);
+        btnBack.setBounds(250, 280, 80, 40);
         btnBack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
-                MyFrame mainWin = new MyFrame("Library", 655, 420, "main");
+                MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
             }
         });
 
@@ -698,7 +702,7 @@ public class MyFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                MyFrame mainWin = new MyFrame("Library", 655, 420, "main");
+                MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
             }
         });
 
@@ -717,7 +721,7 @@ public class MyFrame extends JFrame {
     private void newUser() {
         // Books
         JLabel lblTitle = new JLabel("New User");
-        lblTitle.setBounds(150, 20, 200, 50);
+        lblTitle.setBounds(170, 20, 200, 50);
 
         // Name
         JLabel lblId = new JLabel("ID:");
@@ -736,28 +740,28 @@ public class MyFrame extends JFrame {
             }
         });
 
-        //Author
+        // First Name
         JLabel lblName = new JLabel("First Name:");
         lblName.setBounds(60, 120, 200, 50);
 
         JTextField txtName = new JTextField();
         txtName.setBounds(170, 130, 200, 30);
 
-        //PublishDate
+        // Last Name
         JLabel lblLastName = new JLabel("Last Name:");
         lblLastName.setBounds(60, 170, 200, 50);
 
         JTextField txtLastName = new JTextField();
         txtLastName.setBounds(170, 180, 200, 30);
 
-        //Specifics
+        // Address
         JLabel lblAddress = new JLabel("Address:");
         lblAddress.setBounds(60, 220, 200, 50);
 
         JTextField txtAddress = new JTextField();
         txtAddress.setBounds(170, 230, 200, 30);
 
-        //Specifics
+        // Phone Number
         JLabel lblPhone = new JLabel("Phone Number:");
         lblPhone.setBounds(60, 270, 200, 50);
 
@@ -784,7 +788,7 @@ public class MyFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                MyFrame mainWin = new MyFrame("Library", 655, 420, "main");
+                MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
             }
         });
 
@@ -891,7 +895,7 @@ public class MyFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                MyFrame mainWin = new MyFrame("Library", 655, 420, "main");
+                MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
             }
         });
 
@@ -1052,7 +1056,7 @@ public class MyFrame extends JFrame {
                                 }
                                 if (!furtherAction){
                                     dispose();
-                                    MyFrame mainWin = new MyFrame("Library", 655, 420, "main");
+                                    MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
                                 } else{
                                     dispose();
                                     MyFrame fNewLoan = new MyFrame("New Loan", 450, 400, "newLoan");
@@ -1078,7 +1082,7 @@ public class MyFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                MyFrame mainWin = new MyFrame("Library", 655, 420, "main");
+                MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
             }
         });
 
@@ -1172,7 +1176,7 @@ public class MyFrame extends JFrame {
                         Main.loanList.remove(index);
                         if (Main.loanList.size() == 0){
                             dispose();
-                            MyFrame mainWin = new MyFrame("Library", 655, 420, "main");
+                            MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
                             break;
                         } else{
                             dispose();
@@ -1191,7 +1195,7 @@ public class MyFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                MyFrame mainWin = new MyFrame("Library", 655, 420, "main");
+                MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
             }
         });
 
