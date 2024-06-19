@@ -7,6 +7,9 @@ import java.awt.event.KeyEvent;
 public class MyFrame extends JFrame {
 
     public MyFrame(String name, int width, int height, String winCall) {
+        /*
+        * Este método se utiliza para generar ventanas, sus componentes dependerán de la elección de winCall
+        * */
         setTitle(name);
 
         setSize(width, height);
@@ -50,7 +53,9 @@ public class MyFrame extends JFrame {
     }
 
     private void addMainComponents() {
-
+        /*
+        * Este método declara y añade los objetos del menú principal
+        * */
         JLabel lblLibrary = new JLabel("Library");
         lblLibrary.setBounds(295, 30, 200, 50);
 
@@ -102,7 +107,7 @@ public class MyFrame extends JFrame {
         btnShowLoans.setBounds(470, 200, 120, 50);
         addMainListeners(btnShowLoans, "winShowLoan");
 
-        // Add the button to the JFrame
+        // Add components to the JFrame
         add(lblLibrary);
         add(lblBook);add(btnNewBook);add(btnShowBooks);
         add(lblAuthors);add(btnNewAuthor);add(btnShowAuthors);
@@ -110,6 +115,9 @@ public class MyFrame extends JFrame {
         add(lblLoans);add(btnNewLoan);add(btnShowLoans);
     }
     private void addMainListeners(JButton button, String section) {
+        /*
+        * Este método guarda los listeres de los botones dentro del menú principal para tener mayor claridad
+        * */
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -209,6 +217,9 @@ public class MyFrame extends JFrame {
     }
 
     private void newBook() {
+        /*
+        * Este método declara y añade los componentes de la ventana NewBook
+        * */
         String[] days = new String[31]; String[] months = new String[12]; String[] years = new String[125];
         for (int n = 1; n <= 31; n++){days[n-1] = Integer.toString(n);}
         for (int n = 1; n <= 12; n++){months[n-1] = Integer.toString(n);}
@@ -273,6 +284,7 @@ public class MyFrame extends JFrame {
         cmbGenre = new JComboBox<>(new String[] { "Magazine", "Manga", "Literature", "Science", "Comic" });
         cmbGenre.setBounds(150, 230, 200, 30);
 
+        // Listener para determinar su especificación
         cmbGenre.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -379,7 +391,7 @@ public class MyFrame extends JFrame {
 
 
 
-        // Add the button to the JFrame
+        // Add components to the JFrame
         add(lblTitle);
         add(lblName);add(txtTitle);
         add(lblAuthor);add(cmbAuthor);
@@ -391,6 +403,9 @@ public class MyFrame extends JFrame {
     }
 
     private void showBook() {
+        /*
+         * Este método declara y añade los componentes de la ventana para mostrar los libros registrados
+         * */
         String[] arrBooks = new String[Main.bookList.size()];
         int pos = 0;
         for (Book book : Main.bookList) {
@@ -409,21 +424,21 @@ public class MyFrame extends JFrame {
         JLabel lblNameDet = new JLabel("");
         lblNameDet.setBounds(150, 120, 200, 50);
 
-        // Last Name
+        // Author
         JLabel lblAuthor = new JLabel("Author:");
         lblAuthor.setBounds(60, 170, 200, 50);
 
         JLabel lblAuthorDet = new JLabel("");
         lblAuthorDet.setBounds(150, 170, 200, 50);
 
-        // Nationality
+        // Publish Date
         JLabel lblDate = new JLabel("Publish Date:");
         lblDate.setBounds(60, 220, 200, 50);
 
         JLabel lblDateDet = new JLabel("");
         lblDateDet.setBounds(150, 220, 200, 50);
 
-        // Date of Birth
+        // Genre
         JLabel lblGenre = new JLabel("Genre:");
         lblGenre.setBounds(60, 270, 270, 50);
 
@@ -437,13 +452,14 @@ public class MyFrame extends JFrame {
         JLabel lblSpecDet = new JLabel("");
         lblSpecDet.setBounds(150, 320, 270, 50);
 
-        // Author
+        // Availability
         JLabel lblAvailable = new JLabel("Available:");
         lblAvailable.setBounds(60, 370, 200, 50);
 
         JLabel lblAvailableDet = new JLabel("");
         lblAvailableDet.setBounds(150, 370, 200, 50);
 
+        // Book
         JLabel lblBook = new JLabel("Book:");
         lblBook.setBounds(60, 70, 200, 50);
 
@@ -504,7 +520,7 @@ public class MyFrame extends JFrame {
             }
         });
 
-        // Add the button to the JFrame
+        // Add components to the JFrame
         add(lblTitle);
         add(lblName);add(lblNameDet);
         add(lblAuthor);add(lblAuthorDet);
@@ -517,6 +533,9 @@ public class MyFrame extends JFrame {
     }
 
     private void newAuthor() {
+        /*
+         * Este método declara y añade los componentes de la ventana usada para registrar autores
+         * */
         String[] days = new String[31]; String[] months = new String[12]; String[] years = new String[125];
         for (int n = 1; n <= 31; n++){days[n-1] = Integer.toString(n);}
         for (int n = 1; n <= 12; n++){months[n-1] = Integer.toString(n);}
@@ -579,7 +598,7 @@ public class MyFrame extends JFrame {
             }
         });
 
-        // Add the button to the JFrame
+        // Add components to the JFrame
         add(lblTitle);
         add(lblName);add(txtName);
         add(lblLastName);add(txtLastName);
@@ -596,6 +615,10 @@ public class MyFrame extends JFrame {
                                        JComboBox jDay,
                                        JComboBox jMonth,
                                        JComboBox jYear) {
+
+        /*
+         * Este método determina las decisiones dentro de la ventana para generar un nuevo autor
+         * */
 
         button.addActionListener(new ActionListener() {
             @Override
@@ -632,6 +655,9 @@ public class MyFrame extends JFrame {
         });
     }
     private void showAuthor() {
+        /*
+         * Este método declara y añade los componentes de la ventana para mostrar los autores registrados
+         * */
         String[] arrAuthors = new String[Main.authorList.size()];
         int pos = 0;
         for (Author author : Main.authorList) {
@@ -708,7 +734,7 @@ public class MyFrame extends JFrame {
 
 
 
-        // Add the button to the JFrame
+        // Add components to the JFrame
         add(lblTitle);
         add(lblName);add(lblNameDet);
         add(lblLastName);add(lblLastNameDet);
@@ -719,6 +745,9 @@ public class MyFrame extends JFrame {
     }
 
     private void newUser() {
+        /*
+         * Este método declara y añade los componentes de la ventana para registrar nuevos usuarios
+         * */
         // Books
         JLabel lblTitle = new JLabel("New User");
         lblTitle.setBounds(170, 20, 200, 50);
@@ -792,6 +821,7 @@ public class MyFrame extends JFrame {
             }
         });
 
+        // Add components to the JFrame
         add(lblTitle);
         add(lblName);add(txtName);
         add(lblLastName);add(txtLastName);
@@ -807,7 +837,9 @@ public class MyFrame extends JFrame {
                                        JTextField jAddress,
                                        JTextField jPhoneNumber,
                                        JTextField jId) {
-
+        /*
+         * Este método maneja las decisiones tomadas en el análisis para la creación de nuevos usuarios
+         * */
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -826,7 +858,7 @@ public class MyFrame extends JFrame {
                     User user = new User(firstName, lastName, address, phone, id);
                     Main.userList.add(user);
                     JOptionPane.showMessageDialog(null,
-                            "Author Has been Registered",
+                            "User Has been Registered",
                             "Success",
                             JOptionPane.INFORMATION_MESSAGE);
                     jName.setText("");
@@ -840,6 +872,9 @@ public class MyFrame extends JFrame {
     }
 
     private void showUser() {
+        /*
+         * Este método declara y añade los componentes de la ventana para mostrar los usuarios registrados
+         * */
         // Title
         JLabel lblTitle = new JLabel("User Information");
         lblTitle.setBounds(150, 20, 200, 50);
@@ -927,7 +962,7 @@ public class MyFrame extends JFrame {
             }
         });
 
-        // Add the button to the JFrame
+        // Add components to the JFrame
         add(lblTitle);
         add(lblId);add(txtId);
         add(lblName);add(lblNameDet);
@@ -938,6 +973,9 @@ public class MyFrame extends JFrame {
     }
 
     private void newLoan() {
+        /*
+         * Este método declara y añade los componentes de la ventana para registrar préstamos
+         * */
         String[] days = new String[31]; String[] months = new String[12]; String[] years = {"2024", "2025", "2026"};
         for (int n = 1; n <= 31; n++){days[n-1] = Integer.toString(n);}
         for (int n = 1; n <= 12; n++){months[n-1] = Integer.toString(n);}
@@ -1099,6 +1137,9 @@ public class MyFrame extends JFrame {
     }
 
     private void showLoan() {
+        /*
+         * Este método declara y añade los componentes de la ventana para mostrar los préstamos registrados
+         * */
         String[] arrLoans = new String[Main.loanList.size()];
         int pos = 0;
         for (Loan loan : Main.loanList) {
