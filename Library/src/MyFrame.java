@@ -122,7 +122,6 @@ public class MyFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Call the method when the button is pressed
-                setVisible(false);
                 switch (section){
                     case "winNewBook":
                         if (Main.authorList.isEmpty()){
@@ -385,7 +384,6 @@ public class MyFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
             }
         });
 
@@ -515,8 +513,7 @@ public class MyFrame extends JFrame {
         btnBack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
+                dispose();
             }
         });
 
@@ -593,8 +590,7 @@ public class MyFrame extends JFrame {
         btnBack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
+                dispose();
             }
         });
 
@@ -728,7 +724,6 @@ public class MyFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
             }
         });
 
@@ -817,7 +812,6 @@ public class MyFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
             }
         });
 
@@ -930,7 +924,6 @@ public class MyFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
             }
         });
 
@@ -1094,7 +1087,6 @@ public class MyFrame extends JFrame {
                                 }
                                 if (!furtherAction){
                                     dispose();
-                                    MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
                                 } else{
                                     dispose();
                                     MyFrame fNewLoan = new MyFrame("New Loan", 450, 400, "newLoan");
@@ -1120,7 +1112,6 @@ public class MyFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
             }
         });
 
@@ -1217,7 +1208,6 @@ public class MyFrame extends JFrame {
                         Main.loanList.remove(index);
                         if (Main.loanList.size() == 0){
                             dispose();
-                            MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
                             break;
                         } else{
                             dispose();
@@ -1236,7 +1226,6 @@ public class MyFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                MyFrame mainWin = new MyFrame("Library", 655, 390, "main");
             }
         });
 
