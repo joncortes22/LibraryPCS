@@ -8,4 +8,4 @@ Es **importante** recalcar que decidí que seguí una secuencia lógica de avail
 
 Si necesitas alguna clarificación estoy al tanto, muchas gracias.
 
-PD: Hice que el menú se quede estático como me lo pidió en clase.
+PD: Hice que el menú se quede estático como me lo pidió en clase (el video fue grabado previo a la clase por eso todavía no tiene este fix).
